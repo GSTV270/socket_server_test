@@ -7,6 +7,7 @@ const randomLongitude = require('random-longitude')
 const app = express()
 const server = http.Server(app)
 const io = socketio(server)
+const appPort = process.env.PORT || 3333
 
 const monsters = [
 'Dreamseeker',
@@ -58,4 +59,4 @@ app.get('/', (_, response) => {
   return response.json({message: 'Hello, I am here!'})
 })
 
-server.listen(3333)
+server.listen(appPort)
